@@ -54,7 +54,7 @@ export async function getCatById(id) {
  */
 export async function getCatByIdClient(id) {
   const res = await fetch(
-    `https://api.thecatapi.com/v1/images/search?breed_ids=${id}`,
+    `https://api.thecatapi.com/v1/images/search?api_key=${process.env.NEXT_PUBLIC_CAT_API_KEY}&breed_ids=${id}`,
   );
 
   if (!res.ok) {
