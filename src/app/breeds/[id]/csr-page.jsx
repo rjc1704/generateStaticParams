@@ -7,6 +7,7 @@ import CatDetail from "@/components/ui/CatDetail";
 import Loading from "@/components/ui/Loading";
 import ErrorDisplay from "@/components/ui/ErrorDisplay";
 import { getCatByIdClient } from "@/lib/services/catApi";
+import BreedDetailHeader from "./_components/BreedDetailHeader";
 
 export default function CSRCatBreedPage() {
   console.log("CSR-CatBreedPage");
@@ -36,6 +37,7 @@ export default function CSRCatBreedPage() {
 
   return (
     <PageContainer title={cat.breeds[0].name}>
+      <BreedDetailHeader breed={cat.breeds[0]} />
       <CatDetail cat={cat} />
     </PageContainer>
   );

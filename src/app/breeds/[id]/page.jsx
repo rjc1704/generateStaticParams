@@ -1,7 +1,7 @@
 import PageContainer from "@/components/ui/PageContainer";
 import CatDetail from "@/components/ui/CatDetail";
 import { getCatById } from "@/lib/services/catApi";
-import BreedDetailHeader from "@/components/ui/BreedDetailHeader";
+import BreedDetailHeader from "@/app/breeds/[id]/_components/BreedDetailHeader";
 
 export default async function CatBreedPage({ params }) {
   console.log("SSR-CatBreedPage");
