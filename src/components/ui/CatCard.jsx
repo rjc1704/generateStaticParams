@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 /**
@@ -21,10 +22,11 @@ export default function CatCard({
   const Card = () => (
     <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-shadow">
       <div className="relative h-64 bg-lime-400">
-        <img
+        <Image
           src={imageUrl || "/placeholder-cat.jpg"}
+          fill
           alt={name}
-          className="object-cover w-full h-full"
+          className="object-cover"
         />
       </div>
       <div className="p-4">
