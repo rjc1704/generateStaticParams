@@ -1,45 +1,14 @@
-async function getCats() {
-  const res = await fetch(
-    `https://api.thecatapi.com/v1/images/search?api_key=${process.env.CAT_API_KEY}&limit=8&has_breeds=1`,
-  );
-
-  if (!res.ok) {
-    throw new Error("고양이 데이터를 가져오는데 실패했습니다");
-  }
-
-  return res.json();
-}
+import CatCard from "@/components/ui/CatCard";
+import PageContainer from "@/components/ui/PageContainer";
+import { getCats } from "@/lib/services/catApi";
+import CatCardList from "@/components/ui/CatCardList";
 
 export default async function Home() {
   const cats = await getCats();
-
+  console.log("cats", cats);
   return (
-    <div className="min-h-screen p-8">
-      <h1 className="text-2xl mb-4 text-center text-secondary">The Cat API</h1>
-
-      <main>
-        <div className="grid grid-cols-4 gap-4">
-          {cats.map((cat) => (
-            <div
-              key={cat.id}
-              className="border rounded-lg overflow-hidden shadow-md"
-            >
-              <figure className="h-48">
-                <img
-                  src={cat.url}
-                  alt={cat.breeds[0]?.name || "고양이"}
-                  className="w-full h-full object-cover"
-                />
-              </figure>
-              <div className="p-4">
-                <h2 className="text-center font-medium">
-                  {cat.breeds[0]?.name || "고양이"}
-                </h2>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
+    <PageContainer title="The Cat API">
+      <CatCardList items={cats} linkable={false} />
+    </PageContainer>
   );
 }
