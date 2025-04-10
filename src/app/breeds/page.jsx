@@ -4,7 +4,7 @@ import { getCatBreeds } from "@/lib/services/catApi";
 
 export default async function CatBreeds() {
   const breeds = await getCatBreeds();
-  console.log("breeds", breeds);
+  console.log("breeds 페이지");
   return (
     <PageContainer title="고양이 품종 리스트">
       <CatCardList

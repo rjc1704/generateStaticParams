@@ -6,8 +6,8 @@ import Image from "next/image";
 import staticCat from "../../public/sampleCat.jpg";
 
 export default async function Home() {
+  console.log("Home");
   const cats = await getCats();
-  console.log("cats", cats);
   return (
     <PageContainer title="The Cat API">
       <div className="relative mx-auto w-[300px] h-[300px] flex justify-center items-center mb-4">
