@@ -3,8 +3,8 @@ import PageContainer from "@/components/common/PageContainer";
 import { getCatBreeds } from "@/lib/services/catApi";
 
 export default async function CatBreeds() {
-  const breeds = await getCatBreeds();
   console.log("breeds 페이지");
+  const breeds = await getCatBreeds();
   return (
     <PageContainer title="고양이 품종 리스트">
       <CatCardList

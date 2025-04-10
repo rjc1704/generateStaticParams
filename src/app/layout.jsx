@@ -19,7 +19,7 @@ export const metadata = {
   description: "다양한 고양이 품종에 대한 정보를 제공하는 웹사이트",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body
