@@ -23,3 +23,6 @@ export default async function Home() {
     </PageContainer>
   );
 }
+
+// export const revalidate = 5; // 5초 간격의 ISR
+export const dynamic = "force-dynamic";
