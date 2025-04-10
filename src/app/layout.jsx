@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
+import Providers from "./providers";
 
 const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
@@ -25,8 +26,10 @@ export default async function RootLayout({ children }) {
       <body
         className={`${notoSansKr.className} ${geistSans.variable} antialiased`}
       >
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );
