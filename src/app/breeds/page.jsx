@@ -2,6 +2,11 @@ import CatCardList from "@/components/ui/CatCardList";
 import PageContainer from "@/components/common/PageContainer";
 import { getCatBreeds } from "@/lib/services/catApi";
 
+export const metadata = {
+  title: "고양이 품종리스트",
+  description: "다양한 고양이 품종들을 살펴보세요",
+};
+
 export default async function CatBreeds() {
   console.log("breeds 페이지");
   const breeds = await getCatBreeds();

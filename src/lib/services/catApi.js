@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 /**
  * 메인 페이지에 표시할 고양이 데이터를 가져옵니다.
  * @returns {Promise<Array>} 고양이 데이터 배열
@@ -38,7 +40,8 @@ export async function getCatBreeds() {
  * @param {string} id - 고양이 품종 ID
  * @returns {Promise<Array>} 고양이 데이터 배열
  */
-export async function getCatById(id) {
+export const getCatById = cache(async (id) => {
+  console.log("getCatById");
   const res = await fetch(
     `https://api.thecatapi.com/v1/images/search?api_key=${process.env.CAT_API_KEY}&breed_ids=${id}`,
   );
@@ -48,7 +51,7 @@ export async function getCatById(id) {
   }
 
   return res.json();
-}
+});
 
 /**
  * 특정 품종의 고양이 데이터를 가져옵니다. (클라이언트 컴포넌트용)
