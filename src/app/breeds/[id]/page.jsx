@@ -4,6 +4,7 @@ import { getCatById } from "@/lib/services/api/catApi";
 import BreedDetailHeader from "./_components/BreedDetailHeader";
 import CommentForm from "./_components/CommentForm";
 import CommentList from "./_components/CommentList";
+import { Suspense } from "react";
 
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
@@ -28,7 +29,15 @@ export default async function CatBreedPage({ params }) {
       <BreedDetailHeader breed={cat.breeds[0]} />
       <CatDetail cat={cat} />
       <CommentForm breedId={id} />
-      <CommentList breedId={id} />
+      <Suspense
+        fallback={
+          <div className="bg-red-500 text-center text-2xl font-bold">
+            댓글 데이터 로딩중...
+          </div>
+        }
+      >
+        <CommentList breedId={id} />
+      </Suspense>
     </PageContainer>
   );
 }
