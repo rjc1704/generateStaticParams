@@ -1,9 +1,8 @@
-import CatCard from "@/components/ui/CatCard";
 import PageContainer from "@/components/common/PageContainer";
-import { getCats } from "@/lib/services/catApi";
+import { getCats } from "@/lib/services/api/catApi";
 import CatCardList from "@/components/ui/CatCardList";
 import Image from "next/image";
-import staticCat from "../../public/sampleCat.jpg";
+import staticCat from "@/assets/sampleCat.jpg";
 
 export default async function Home() {
   console.log("Home");

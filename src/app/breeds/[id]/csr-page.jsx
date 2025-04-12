@@ -6,7 +6,7 @@ import PageContainer from "@/components/common/PageContainer";
 import CatDetail from "@/components/ui/CatDetail";
 import Loading from "@/components/ui/Loading";
 import ErrorDisplay from "@/components/ui/ErrorDisplay";
-import { getCatByIdClient } from "@/lib/services/catApi";
+import { getCatByIdClient } from "@/lib/services/api/catApi";
 import BreedDetailHeader from "./_components/BreedDetailHeader";
 
 export default function CSRCatBreedPage() {

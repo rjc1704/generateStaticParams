@@ -1,4 +1,4 @@
-import { getCats } from "@/lib/services/catApi";
+import { getCats } from "@/lib/services/api/catApi";
 import { NextResponse } from "next/server";
 
 export async function GET() {

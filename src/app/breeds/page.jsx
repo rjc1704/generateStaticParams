@@ -1,6 +1,6 @@
 import CatCardList from "@/components/ui/CatCardList";
 import PageContainer from "@/components/common/PageContainer";
-import { getCatBreeds } from "@/lib/services/catApi";
+import { getCatBreeds } from "@/lib/services/api/catApi";
 
 export const metadata = {
   title: "고양이 품종리스트",
