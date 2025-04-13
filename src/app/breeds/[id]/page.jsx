@@ -6,6 +6,10 @@ import CommentForm from "./_components/CommentForm";
 import CommentList from "./_components/CommentList";
 import { Suspense } from "react";
 
+export async function generateStaticParams() {
+  return [{ id: "abys" }, { id: "aege" }, { id: "abob" }];
+}
+
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const { id } = await params;
@@ -19,8 +23,9 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 export default async function CatBreedPage({ params }) {
-  console.log("SSR-CatBreedPage");
   const { id } = await params;
+  console.log("id", id);
+  console.log("SSR-CatBreedPage");
   const cats = await getCatById(id);
   const cat = cats[0];
 

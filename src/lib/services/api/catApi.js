@@ -44,6 +44,9 @@ export const getCatById = cache(async (id) => {
   console.log("getCatById");
   const res = await fetch(
     `https://api.thecatapi.com/v1/images/search?api_key=${process.env.CAT_API_KEY}&breed_ids=${id}`,
+    {
+      cache: "force-cache",
+    },
   );
 
   if (!res.ok) {
